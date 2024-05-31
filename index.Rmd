@@ -1,5 +1,5 @@
 ---
-title: "A3: Incarceration"
+title: "A4: Incarceration"
 output: html_document
 ---
 
@@ -7,17 +7,28 @@ output: html_document
 
 An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
 
+The incarceration rate in the state of Washington has changed drastically within the past few decades. In this analysis, we will
+be focusing on Washington state and our very own King county and examining how rates of imprisonment have changed since the
+1990's. We will be looking at incarceration rates of each race and analyzing them. Furthermore, we will be examining possible
+distinctions and disparities that could have occurred within our judicial system. Our data set includes data spanning from the
+years 1990 to 2018.
+
 ### Summary Information
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
 
 - What is the average value of my variable across all the counties (in the current year)?
 - Where is my variable the highest / lowest?
 - How much has my variable change over the last N years?
 
 Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+
+The average total prison Population rate is 371.83 across all counties in Washington. It ranges from the lowest being 39.93 and
+the highest 1173.30. The county with the lowest prisoners is San Juan County, while the county with the most prisoners being
+Franklin County. There is not an obvious trend in the amount of prisoners within the state of Washington, every county has their
+own trend. On the other hand, if we look at King County specifically there has been a decrease in prisoners over the last two
+decades, especially for black and latin people.
 
 ### The Dataset
 
@@ -28,6 +39,13 @@ How many observations (rows) are in your data?
 How many features (columns) are in the data?  
 What, if any, ethical questions or questions of power do you need to consider when working with this data?  
 What are possible limitations or problems with this data?   (at least 200 words)
+
+This dataset was collected by the U.S. Department of Justice Bureau of justice Statistics. Which then was compiled by multiple
+organizations, including the NCRP, NPS, and the DCRP.The data was collected using annual surveys conducted by the jails and
+prisons. This dataset consists of 1131 obaervations(rows) and 23 features(columns). Working with this data, we have to consider
+several ethical questions related to power. We cannot ensure that prisons are ethically collecting this data form the inmates.
+As stated in our constitution, incarcerated people don't have the same rights as we do, so we can't ensure that the methods used
+to obtain this data is favorable or fair to the inmates.
 
 
 ### Trends Over Time Chart
@@ -46,18 +64,27 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("chart1_a4.R")}
 ```
+
+how I chose to include this chart in order to find trends in the number of prisoner's in King County. My graph includes lines for different races, to illustrate and find any differences and commonalities. The graph shows a decrease in prison population rates over the last two decades decades, the groups with biggest decrease being Black and Latin people.
 
 ### Variable Comparison Chart
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what
+such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help
+guide your design:
 
 - You must have clear x and y axis labels
 - The chart needs a clear title 
 - If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
+
+```{r, echo = FALSE, code = readLines("chart2_a4.R")}
+```
+
+I included this bar graph for the purpose of comparing the urban county with the highest population and the suburban county with the highest population. The graph shows a side by side comparison of races for a better comparison. The results showed that the all but black people had lower rates of imprisonment in the suburban county, while black people had significantly more in the urban county.
 
 ### Map
 
@@ -68,4 +95,7 @@ The last chart that you will create and include will show how a variable is dist
 - Your map needs a title
 - Your color scale needs a legend with a clear label
 - Use a map based coordinate system to set the aspect ratio of your map
+```{r, echo = FALSE, code = readLines("map_a4.R")}
+```
 
+This map illustrates the average prison population of each county in Washington state from 1990 to 2018. The results show that counties in the south west have greater rates of incarceration than in areas like east and north west.
